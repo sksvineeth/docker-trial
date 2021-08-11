@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 741989928127.dkr.ecr.$eu-west-1.amazonaws.com
+      - aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 741989928127.dkr.ecr.eu-west-1.amazonaws.com
   build:
     commands:
       - echo Build started on `date`
@@ -13,10 +13,10 @@ phases:
       - echo Permissions `ls -la` 
       - chmod -R 775 ml_model_train_test_code
       - echo ml_model_train_test_code Permissions `cd ml_model_train_test_code && ls -la`     
-      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
-      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG      
+      - docker build -t trialdockerfile .
+      - docker tag trialdockerfile 741989928127.dkr.ecr.eu-west-1.amazonaws.com/trialdockerfile     
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
+      - docker push 741989928127.dkr.ecr.eu-west-1.amazonaws.com/trialdockerfile
