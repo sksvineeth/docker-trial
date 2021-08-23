@@ -12,11 +12,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image...          
-      - echo Path `pwd` 
-      - echo Permissions `ls -la` 
-      - chmod -R 775 ml_model_train_test_code
-      - echo ml_model_train_test_code Permissions `cd ml_model_train_test_code && ls -la`     
+      - echo Building the Docker image...              
       - docker build -t trialdockerfile .
       - docker tag trialdockerfile 954138081537.dkr.ecr.eu-west-1.amazonaws.com/testcicd  
   post_build:
