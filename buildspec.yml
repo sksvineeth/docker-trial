@@ -5,7 +5,7 @@ phases:
     commands:
       - echo Logging in to Amazon ECR...
       - aws --version
-      - aws ecr get-login-password | docker login --username AWS --password-stdin 741989928127.dkr.ecr.us-east-1.amazonaws.com/trialdockerfile
+      - aws ecr get-login-password | docker login --username AWS --password-stdin 954138081537.dkr.ecr.eu-west-1.amazonaws.com/testcicd
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
      
@@ -18,7 +18,7 @@ phases:
       - chmod -R 775 ml_model_train_test_code
       - echo ml_model_train_test_code Permissions `cd ml_model_train_test_code && ls -la`     
       - docker build -t trialdockerfile .
-      - docker tag trialdockerfile 741989928127.dkr.ecr.eu-west-1.amazonaws.com/trialdockerfile     
+      - docker tag trialdockerfile 954138081537.dkr.ecr.eu-west-1.amazonaws.com/testcicd  
   post_build:
     commands:
       - echo Build completed on `date`
