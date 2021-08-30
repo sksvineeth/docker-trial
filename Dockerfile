@@ -38,9 +38,7 @@ ENV PYTHONDONTWRITEBYTECODE=TRUE
 ENV PATH="/opt/program:${PATH}"
 
 # Set up the program in the image
-
-COPY train.py .
-
+RUN ls -la
 ENTRYPOINT ["python", "train.py"]
 
 
