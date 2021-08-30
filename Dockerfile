@@ -38,8 +38,9 @@ ENV PYTHONDONTWRITEBYTECODE=TRUE
 ENV PATH="/opt/program:${PATH}"
 
 # Set up the program in the image
-COPY docker-trial /opt/program
-WORKDIR /opt/program
+RUN mkdir /opt/TrailProgram
+WORKDIR /opt/TrailProgram
+RUN git clone https://github.com/sksvineeth/docker-trial/blob/main
 
 ENTRYPOINT ["python", "train.py"]
 
