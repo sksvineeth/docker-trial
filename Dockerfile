@@ -39,6 +39,9 @@ ENV PATH="/opt/program:${PATH}"
 
 # Set up the program in the image
 RUN ls -la
+COPY train.py .
+RUN ls -la
+
 ENTRYPOINT ["python", "train.py"]
 
 
