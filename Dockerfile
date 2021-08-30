@@ -35,11 +35,14 @@ RUN pip3 install numpy==1.14.3 scipy scikit-learn==0.23.2 pandas==0.22.0 tensorf
 
 ENV PYTHONUNBUFFERED=TRUE
 ENV PYTHONDONTWRITEBYTECODE=TRUE
-ENV PATH="/opt/program:${PATH}"
+ENV PATH="/usr/bin/test:${PATH}"
 
 # Set up the program in the image
-COPY train.py /opt/program
-WORKDIR /opt/program
+RUN mkdir /usr/bin/test
+COPY train.py /usr/bin/test
+RUN ls
+RUN pwd
+WORKDIR /usr/bin/test
 
 ENTRYPOINT ["python", "train.py"]
 
