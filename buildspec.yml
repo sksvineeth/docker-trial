@@ -12,7 +12,11 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo Building the Docker image...              
+      - echo Building the Docker image...
+      - echo Path `pwd` 
+      - echo Permissions `ls -la` 
+      - chmod -R 775 cicd-trial
+      - echo cicd-trial Permissions `cd cicd-trial && ls -la` 
       - docker build -t trialdockerfile .
       - docker tag trialdockerfile 954138081537.dkr.ecr.eu-west-1.amazonaws.com/testcicd  
   post_build:
