@@ -36,7 +36,7 @@ RUN pip3 install numpy==1.14.3 scipy scikit-learn==0.23.2 pandas==0.22.0 tensorf
 ENV PYTHONUNBUFFERED=TRUE
 ENV PYTHONDONTWRITEBYTECODE=TRUE
 ENV PATH="/opt/program:${PATH}"
-
+ENTRYPOINT ["python", "train.py"]
 
 EXPOSE 80
 
