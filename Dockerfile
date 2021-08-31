@@ -26,7 +26,7 @@ RUN ln -s /usr/bin/pip3 /usr/bin/pip
 RUN apt-get update && apt-get install -y python3-pip 
 RUN pip3 -V
 	
-RUN pip3 install numpy==1.14.3 scipy scikit-learn==0.23.2 pandas==0.22.0 tensorflow flask gevent gunicorn bayesian-optimization sklearn bayes_opt pickle boto3
+RUN pip3 install numpy==1.14.3 scipy scikit-learn==0.23.2 pandas==0.22.0 tensorflow flask gevent gunicorn bayesian-optimization sklearn pickle boto3
 
 # Set some environment variables. PYTHONUNBUFFERED keeps Python from buffering our standard
 # output stream, which means that logs can be delivered to the user quickly. PYTHONDONTWRITEBYTECODE
