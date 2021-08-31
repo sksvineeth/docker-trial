@@ -68,7 +68,7 @@ def data_process():
 
     #pprint("Imported!")
     bucket = "innovation-poc"
-    train_key = "product_classifier_data_correlation_Brigitte_data_owner/NL & US Data/features_preprocessed.csv"
+    train_key = "product_classifier_data_correlation_Brigitte_data_owner/preprocessed_data/features_preprocessed.csv"
     #Load Training Data
     buffer = io.BytesIO()
     s3 = boto3.resource('s3')
