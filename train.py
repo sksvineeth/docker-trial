@@ -66,7 +66,7 @@ import traceback
 
 def data_process():
 
-    pprint("Imported!")
+    #pprint("Imported!")
     bucket = "innovation-poc"
     train_key = "product_classifier_data_correlation_Brigitte_data_owner/NL & US Data/features_preprocessed.csv"
     #Load Training Data
