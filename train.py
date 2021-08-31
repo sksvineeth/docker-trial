@@ -16,7 +16,7 @@
 #!pip install pydot
 #!pip install pydotplus
 #!pip install graphviz
-get_ipython().system('pip install bayesian-optimization')
+#get_ipython().system('pip install bayesian-optimization')
 
 
 # In[3]:
@@ -26,8 +26,8 @@ get_ipython().system('pip install bayesian-optimization')
 import pandas as pd
 import numpy as np
 from numpy import unique
-import matplotlib
-get_ipython().run_line_magic('matplotlib', 'inline')
+#import matplotlib
+#get_ipython().run_line_magic('matplotlib', 'inline')
 import warnings
 warnings.filterwarnings("ignore")
 import tensorflow as tf
@@ -66,7 +66,7 @@ import traceback
 
 def data_process():
 
-    print("Imported!")
+    pprint("Imported!")
     bucket = "innovation-poc"
     train_key = "product_classifier_data_correlation_Brigitte_data_owner/NL & US Data/features_preprocessed.csv"
     #Load Training Data
