@@ -252,9 +252,9 @@ def train():
                             mode='auto', restore_best_weights=True)
         lstm = model.fit([X_train_cat[0], X_train_cat[1], X_train_desc], y_train, 
                   validation_data = ([X_val_cat[0], X_val_cat[1], X_val_desc], y_val), 
-                  callbacks=[monitor], epochs = 20, batch_size = 32, verbose = 1)
+                  callbacks=[monitor], epochs = 5, batch_size = 32, verbose = 1)
          # save the model
-        pkl_path = "product_classifier_data_correlation_Brigitte_data_owner/NL & US Data/"
+        pkl_path = "product_classifier_data_correlation_Brigitte_data_owner/preprocessed_data/"
 
         s = pickle.dumps(lstm)
         s3_resource = boto3.resource('s3')
